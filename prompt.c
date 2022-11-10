@@ -6,7 +6,7 @@
   */
 void print_ps1(int num)
 {
-	char ps1[] = "MARSU$ ";
+	char ps1[] = "ALX$ ";
 	size_t len_ps1;
 	int org_error;
 
@@ -25,13 +25,13 @@ void print_ps1(int num)
   * @input: input to find
   * Return: Path to the input file.
   */
-char* find_pathname(char** path, char* input)
+char* find_pathname(char **path, char *input)
 {
 	unsigned int i;
-	DIR* directory;
-	struct dirent* filename;
+	DIR *directory;
+	struct dirent *filename;
 	int str_cmp, match_found;
-	char* result;
+	char *result;
 
 	filename = NULL;
 	match_found = 0;
@@ -72,7 +72,7 @@ char* find_pathname(char** path, char* input)
   * free_shell_t - frees elements in shell_t struct
   * @shell_ptrs: structure of malloced elements
   */
-void free_shell_t(shell_t* shell_ptrs)
+void free_shell_t(shell_t *shell_ptrs)
 {
 	free(shell_ptrs->path_values);
 	free(shell_ptrs->input);
@@ -84,10 +84,10 @@ void free_shell_t(shell_t* shell_ptrs)
   * @command: command that was submitted by user
   * @filename: name of the file being run
   */
-void p_commanderr(char* command, char* filename)
+void p_commanderr(char *command, char *filename)
 {
-	char* error_message;
-	char* error = ": command not found\n";
+	char *error_message;
+	char *error = ": command not found\n";
 	size_t num_char, i;
 	(void)filename;
 
@@ -109,9 +109,9 @@ void p_commanderr(char* command, char* filename)
   * @delim: string that contains the delimiters
   * Return: pointer to position in string of a null terminated word.
   */
-char* _strtok(char* str, const char* delim)
+char* _strtok(char *str, const char *delim)
 {
-	static char* begin, * end_str, * end;
+	static char *begin, *end_str, *end;
 	unsigned int i, j;
 	int word_found = 0;
 
