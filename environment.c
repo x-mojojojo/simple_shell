@@ -3,7 +3,7 @@
   * print_env - prints out the current environment
   * @ptrs: structure containing all malloced memory
   */
-void print_env(shell_t* ptrs)
+void print_env(shell_t *ptrs)
 {
 	unsigned int i, k;
 	char newline = '\n';
@@ -27,7 +27,7 @@ void print_env(shell_t* ptrs)
   * @name: variable to find
   * Return: pointer to the value of the environment variable.
   */
-char* _getenv(const char* name)
+char *_getenv(const char *name)
 {
 	unsigned int i, j;
 
@@ -46,16 +46,16 @@ char* _getenv(const char* name)
  *
  * Return: array / double pointer.
  */
-char** get_path(char** modify_path)
+char **get_path(char **modify_path)
 {
-	char** token_ptr;
-	char* path, * delim;
+	char **token_ptr;
+	char *path,  *delim;
 	unsigned int i, j, num_char;
 
 	delim = ":";
 	path = _getenv("PATH");
 	num_char = _strlen(path);
-	*modify_path = malloc(sizeof(char) * (num_char + 2));
+	*modify_path = malloc(sizeof(char)  *(num_char + 2));
 	if (num_char == 0)
 	{
 		(*modify_path)[0] = '.';
@@ -96,10 +96,10 @@ char** get_path(char** modify_path)
   * @file: file in the path
   * Return: pointer to an allocated string that contains the full pathname.
   */
-char* make_pathname(char* path, char* file)
+char *make_pathname(char *path, char *file)
 {
 	size_t num_path, num_file;
-	char* result;
+	char *result;
 	unsigned int j, k;
 
 	num_path = _strlen(path);
@@ -119,10 +119,10 @@ char* make_pathname(char* path, char* file)
  * my_exit - simple impl of exit.
  * @ptrs: structure containing all malloced memory
  */
-void my_exit(shell_t* ptrs)
+void my_exit(shell_t *ptrs)
 {
 	unsigned int i;
-	char* exit_str;
+	char *exit_str;
 
 	exit_str = ptrs->input_token[1];
 	if (exit_str != NULL || ptrs == NULL)

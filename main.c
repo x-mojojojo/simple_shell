@@ -7,9 +7,9 @@
   * @envp: argument environment
   * Return: 0 on success
   */
-int main(int argc, char* argv[], char* envp[])
+int main(int argc, char *argv[], char *envp[])
 {
-	char** path_values, * modify_path, ** input_token, * input;
+	char **path_values, *modify_path, **input_token, *input;
 	char delimiter[] = " \n\r\t";
 	size_t n_input;
 	ssize_t getline_stat;
@@ -48,7 +48,7 @@ int main(int argc, char* argv[], char* envp[])
   * @str: input string
   * Return: 1 if slash is found 0 if slash is not found
   */
-int check_slash(char* str)
+int check_slash(char *str)
 {
 	while (*str != '\0')
 	{
@@ -66,12 +66,12 @@ int check_slash(char* str)
   * @envp: environment variable
   * Return: errno value
   */
-int run_command(shell_t* shell_ptrs, char* filename, char** envp)
+int run_command(shell_t *shell_ptrs, char *filename, char **envp)
 {
 	pid_t child_pid;
-	char** input_token = shell_ptrs->input_token;
-	char** path = shell_ptrs->path_values;
-	char* input_org;
+	char **input_token = shell_ptrs->input_token;
+	char **path = shell_ptrs->path_values;
+	char *input_org;
 	int status;
 
 	if (input_token[0] != NULL)
@@ -109,11 +109,11 @@ int run_command(shell_t* shell_ptrs, char* filename, char** envp)
  * @filename: name of the file
  * Return: 1 for match not found, 0 for match found.
  */
-int run_build_in(shell_t* ptrs, char* filename)
+int run_build_in(shell_t *ptrs, char *filename)
 {
 	size_t index;
 	unsigned int num_words;
-	char** input_words;
+	char **input_words;
 	built_t cmd[] = {
 		{"exit", my_exit},
 		{"env", print_env},
@@ -149,11 +149,11 @@ int run_build_in(shell_t* ptrs, char* filename)
   * @filename: filename of the file
   * Return: still to be determined
   */
-int run_path(shell_t* shell_ptrs, char* filename)
+int run_path(shell_t *shell_ptrs, char *filename)
 {
 	pid_t child_pid;
 	int status;
-	char** input_token = shell_ptrs->input_token;
+	char **input_token = shell_ptrs->input_token;
 
 	child_pid = fork();
 	if (child_pid == 0)

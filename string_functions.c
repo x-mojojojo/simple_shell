@@ -6,9 +6,9 @@
   * @str: string
   * Return: number of string
   */
-size_t _strlen(char* str)
+size_t _strlen(char *str)
 {
-	char* s = str;
+	char *s = str;
 	size_t num_char;
 
 	num_char = 0;
@@ -25,10 +25,10 @@ size_t _strlen(char* str)
  *
  * Return: pointer to new memory address of duplicate.
  */
-char* _strdup(char* s)
+char *_strdup(char *s)
 {
 	size_t i, len;
-	char* dup;
+	char *dup;
 
 	i = len = 0;
 	len = _strlen(s);
@@ -51,7 +51,7 @@ char* _strdup(char* s)
   * @str2: second string
   * Return: 0 if they are equal, 1 if not equal
   */
-int _strcmp(char* str1, char* str2)
+int _strcmp(char *str1, char *str2)
 {
 	while (*str1 != '\0' && *str2 != '\0')
 	{
@@ -71,7 +71,7 @@ int _strcmp(char* str1, char* str2)
  *
  * Return: pointer to pointers
  */
-char** tokenize_str(char* str, char* delim)
+char **tokenize_str(char *str, char *delim)
 {
 	size_t n_delim = 0;
 	char* str_dup, * tok;
@@ -81,21 +81,18 @@ char** tokenize_str(char* str, char* delim)
 		return (NULL);
 	str_dup = _strdup(str);
 
-	/* count the delimiters */
 	tok = _strtok(str_dup, delim);
 	while (tok)
 	{
 		n_delim++;
 		tok = _strtok(NULL, delim);
 	}
-	/*free the str_dup*/
+
 	free(str_dup);
-	/* malloc for tokens based on n_delim + 1 for the Null */
-	tokens = malloc(sizeof(char*) * (n_delim + 1));
+	tokens = malloc(sizeof(char *) * (n_delim + 1));
 	if (!tokens)
 		return (NULL);
 
-	/* tokenize str */
 	tok = _strtok(str, delim);
 	n_delim = 0;
 	while (tok)
