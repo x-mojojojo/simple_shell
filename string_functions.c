@@ -74,8 +74,8 @@ int _strcmp(char *str1, char *str2)
 char **tokenize_str(char *str, char *delim)
 {
 	size_t n_delim = 0;
-	char* str_dup, * tok;
-	char** tokens;
+	char *str_dup, *tok;
+	char **tokens;
 
 	if (!str || !delim)
 		return (NULL);

@@ -43,7 +43,7 @@ typedef struct shell_env
 typedef struct built_in_cmd
 {
 	char *cmd_name;
-	void (*cmd)(shell_t*);
+	void (*cmd)(shell_t *);
 } built_t;
 
 

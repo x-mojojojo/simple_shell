@@ -25,7 +25,7 @@ void print_ps1(int num)
   * @input: input to find
   * Return: Path to the input file.
   */
-char* find_pathname(char **path, char *input)
+char *find_pathname(char **path, char *input)
 {
 	unsigned int i;
 	DIR *directory;
@@ -109,7 +109,7 @@ void p_commanderr(char *command, char *filename)
   * @delim: string that contains the delimiters
   * Return: pointer to position in string of a null terminated word.
   */
-char* _strtok(char *str, const char *delim)
+char *_strtok(char *str, const char *delim)
 {
 	static char *begin, *end_str, *end;
 	unsigned int i, j;

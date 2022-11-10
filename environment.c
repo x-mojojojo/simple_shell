@@ -55,7 +55,7 @@ char **get_path(char **modify_path)
 	delim = ":";
 	path = _getenv("PATH");
 	num_char = _strlen(path);
-	*modify_path = malloc(sizeof(char)  *(num_char + 2));
+	*modify_path = malloc(sizeof(char)  * (num_char + 2));
 	if (num_char == 0)
 	{
 		(*modify_path)[0] = '.';
